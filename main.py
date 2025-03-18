@@ -19,15 +19,13 @@ from progress_bar import progress, TimeFormatter, humanbytes
 from dotenv import load_dotenv
 
 load_dotenv()
-bot_token = os.environ.get('7824028526:AAHGTpnJrtBWHv3Tz_Iub2XG7oCjPJiUHVU')
+bot_token = os.environ.get('BOT_TOKEN')
 workers = int(os.environ.get('WORKERS'))
-api = int(os.environ.get('22893926'))
-hash = os.environ.get('d4b52479279de0cd94c929d90f036516')
-chnnl = os.environ.get('https://t.me/jeux_pspAndroid')
-BOT_URL = os.environ.get('https://t.me/@astucesinfobot')
+api = int(os.environ.get('API_KEY'))
+hash = os.environ.get('API_HASH')
+chnnl = os.environ.get('CHANNEL_URL')
+BOT_URL = os.environ.get('BOT_URL')
 app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash, workers=workers)
-
-
 
 @app.on_message(filters.command('start'))
 def start(client, message):
@@ -40,9 +38,6 @@ def start(client, message):
                      parse_mode='md',
                      reply_markup=reply_markup)
 
-
-
-
 @app.on_message(filters.command('help'))
 def help(client, message):
     kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/TerminalWarlord/TikTok-Downloader-Bot/")]]
@@ -52,7 +47,6 @@ def help(client, message):
                      parse_mode='md',
                      reply_markup=reply_markup)
 
-
 @app.on_message((filters.regex("http://")|filters.regex("https://")) & (filters.regex('tiktok')|filters.regex('douyin')))
 def tiktok_dl(client, message):
     a = app.send_message(chat_id=message.chat.id,
@@ -61,9 +55,6 @@ def tiktok_dl(client, message):
     link = re.findall(r'\bhttps?://.*[(tiktok|douyin)]\S+', message.text)[0]
     link = link.split("?")[0]
 
-
-
-    
     params = {
       "link": link
     }
@@ -126,6 +117,5 @@ def tiktok_dl(client, message):
             shutil.rmtree(directory)
         except:
             pass
-
 
 app.run()
