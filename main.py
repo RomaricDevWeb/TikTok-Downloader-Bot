@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 bot_token = os.environ.get('7824028526:AAHGTpnJrtBWHv3Tz_Iub2XG7oCjPJiUHVU')
-workers = int(os.environ.get('4'))
+workers = int(os.environ.get('WORKERS'))
 api = int(os.environ.get('22893926'))
 hash = os.environ.get('d4b52479279de0cd94c929d90f036516')
 chnnl = os.environ.get('https://t.me/jeux_pspAndroid')
