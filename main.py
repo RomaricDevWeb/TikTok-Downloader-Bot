@@ -19,12 +19,12 @@ from progress_bar import progress, TimeFormatter, humanbytes
 from dotenv import load_dotenv
 
 load_dotenv()
-bot_token = os.environ.get('BOT_TOKEN')
-workers = int(os.environ.get('WORKERS'))
-api = int(os.environ.get('API_KEY'))
-hash = os.environ.get('API_HASH')
-chnnl = os.environ.get('CHANNEL_URL')
-BOT_URL = os.environ.get('BOT_URL')
+bot_token = os.environ.get('7824028526:AAHGTpnJrtBWHv3Tz_Iub2XG7oCjPJiUHVU')
+workers = int(os.environ.get('4'))
+api = int(os.environ.get('22893926'))
+hash = os.environ.get('d4b52479279de0cd94c929d90f036516')
+chnnl = os.environ.get('https://t.me/jeux_pspAndroid')
+BOT_URL = os.environ.get('https://t.me/@astucesinfobot')
 app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash, workers=workers)
 
 
